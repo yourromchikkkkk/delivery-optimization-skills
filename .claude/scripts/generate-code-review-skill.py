@@ -101,9 +101,9 @@ def collect_form(data: dict) -> FormData:
             if not qid or "." not in qid:
                 continue
 
-            val = question_value(q)
+            val = preset_values.get(qid)
             if val is None:
-                val = preset_values.get(qid)
+                val = question_value(q)
             if val is None:
                 continue
 

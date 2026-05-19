@@ -967,6 +967,7 @@ def apply(data: dict, presets, *, fill_empty_only: bool = False) -> None:
     """Apply preset values to form questions in JSON."""
     form_idx = index_questions(data)
     filled, additions, skipped = 0, 0, 0
+    additions_so_far: dict[str, list[str]] = {}
 
     for source, preset in presets:
         print(f"\n• {source}")
@@ -1000,9 +1001,12 @@ def apply(data: dict, presets, *, fill_empty_only: bool = False) -> None:
                 additions += len(new_lines)
                 action_lines = new_lines
             else:
-                combined = "\n".join(lines).strip()
-                additions += len(lines)
-                action_lines = lines
+                accumulated = additions_so_far.setdefault(target, [])
+                new_lines = [ln for ln in lines if ln not in accumulated]
+                accumulated.extend(new_lines)
+                combined = "\n".join(accumulated).strip()
+                additions += len(new_lines)
+                action_lines = new_lines
             q["suggested"] = combined
             for ln in action_lines:
                 print(f"    add  {target:18s} + {ln}")

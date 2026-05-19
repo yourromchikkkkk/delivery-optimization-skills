@@ -37,14 +37,14 @@ Review changes against the standards below. Be specific: cite file/line, explain
 - Dependency injection via constructors (no global singletons)
 - Typed HTTP clients (no raw requests / fetch in business code)
 - Errors propagate via exceptions (no returning null on failure)
+- App Router patterns: server components by default, 'use client' only when needed
+- Server actions for mutations (no implicit API routes)
+- next/image for images, next/font for fonts
 - Single Responsibility — each module / class has one reason to change
 - Open/Closed — open for extension, closed for modification
 - Liskov Substitution — derived types must be substitutable for their base types
 - Interface Segregation — many specific interfaces over one large interface
 - Dependency Inversion — depend on abstractions, never on concretions
-- App Router patterns: server components by default, `'use client'` only when needed
-- Server actions for mutations (no implicit API routes)
-- `next/image` for images, `next/font` for fonts
 
 ## Forbidden patterns (blockers)
 
@@ -56,9 +56,9 @@ Review changes against the standards below. Be specific: cite file/line, explain
 - Wildcard imports
 - Disabled lint or type-check rules without justification
 - TODO / FIXME without a ticket reference
-- `any` type used to bypass type-checking (use `unknown` + narrowing instead)
-- `@ts-ignore` without an explanatory comment and ticket
-- Non-null assertion (`!`) on values not provably non-null
+- any type used to bypass type-checking (use unknown + narrowing instead)
+- @ts-ignore without an explanatory comment and ticket
+- Non-null assertion (!) on values not provably non-null
 - Client-side state in server components
 - Direct DB access from client components
 - Comments that describe *what* the code does (rewrite the code to be self-explanatory)

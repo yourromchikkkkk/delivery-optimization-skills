@@ -1,10 +1,11 @@
 # agent-skills
 
-Project configuration for Cursor/Claude agents lives under [`.claude/`](.claude/README.md):
+Claude Code skills and scripts for consistent code review, commit messages, and documentation.
+Configuration lives under [`.claude/`](.claude/README.md).
 
-- **Config** — `.claude/code-standards.json` (questions, setup, answers)
-- **Scripts** — `.claude/scripts/`
-- **Slash command** — `/code-reviewer-generator`
-- **Generated skill** — `/code-review`
+- **Skills** — `/code-review`, `/commit-message`, `/update-readme`
+- **Command** — `/code-reviewer-generator` (generates `/code-review` from team standards)
+- **Config** — `.claude/code-standards.json` (language, framework, rules)
+- **Scripts** — `.claude/scripts/` (Python 3.9+, no third-party deps)
 
 See [`.claude/README.md`](.claude/README.md) for setup and usage.

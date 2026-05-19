@@ -68,6 +68,6 @@ Present output in this order:
 
 After presenting the output, ask the user: **"Approve this commit message?"**
 
-- If approved (yes / looks good / etc.): stage all modified tracked files with `git add` and run `git commit` with the approved message. Append `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` to the commit body.
+- If approved (yes / looks good / etc.): first invoke the `update-readme` skill to review the codebase and create or update README.md files. Then stage all modified tracked files (including any README changes) with `git add` and run `git commit` with the approved message. Append `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>` to the commit body.
 - If the user requests changes: apply them, show the revised message, and ask again.
 - If declined: stop without committing.
