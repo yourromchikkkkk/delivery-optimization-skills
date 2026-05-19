@@ -1,0 +1,631 @@
+{
+  "version": 1,
+  "setup": {
+    "setup.lang": "TypeScript",
+    "setup.framework": "TypeScript: Next.js",
+    "method.clean_code": "Y",
+    "method.solid": "Y",
+    "method.ddd": "N",
+    "method.hex": "N",
+    "method.twelve": "N",
+    "method.tdd": "N",
+    "method.functional": "N"
+  },
+  "form": [
+    {
+      "section": "1. Team and language",
+      "questions": [
+        {
+          "id": "meta.lang",
+          "question": "Language / stack",
+          "type": "text",
+          "suggested": "React + typescript",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "meta.team",
+          "question": "Department / team",
+          "type": "text",
+          "suggested": "Splice",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "meta.contact",
+          "question": "Contact (Slack channel or email)",
+          "type": "text",
+          "suggested": "roman.korin@intellecteu.com",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "meta.date",
+          "question": "Date filled (YYYY-MM-DD)",
+          "type": "text",
+          "suggested": "13.05.2026",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "meta.scope",
+          "question": "Applies to (repos or services)",
+          "type": "text",
+          "suggested": null,
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "2. Style and syntax",
+      "questions": [
+        {
+          "id": "style.indent",
+          "question": "Indentation",
+          "type": "choice",
+          "suggested": "Spaces",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "style.size",
+          "question": "Indent size (if spaces)",
+          "type": "choice",
+          "suggested": "2 spaces",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "style.quotes",
+          "question": "Quote style for strings",
+          "type": "choice",
+          "suggested": "Single quotes",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "style.linelen",
+          "question": "Maximum line length",
+          "type": "choice",
+          "suggested": "100",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "style.trailing",
+          "question": "Trailing commas in multi-line collections",
+          "type": "choice",
+          "suggested": "Required",
+          "override": "Forbidden",
+          "other": null
+        },
+        {
+          "id": "style.types",
+          "question": "Type annotations / hints",
+          "type": "choice",
+          "suggested": "Required on all functions",
+          "override": "Optional / encouraged",
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "3. Naming conventions",
+      "questions": [
+        {
+          "id": "name.file",
+          "question": "File / module naming",
+          "type": "choice",
+          "suggested": "kebab-case",
+          "override": "kebab-case",
+          "other": null
+        },
+        {
+          "id": "name.class",
+          "question": "Class naming",
+          "type": "choice",
+          "suggested": "PascalCase",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "name.func",
+          "question": "Function and variable naming",
+          "type": "choice",
+          "suggested": "camelCase",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "name.const",
+          "question": "Constants",
+          "type": "choice",
+          "suggested": "UPPER_SNAKE_CASE",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "name.test",
+          "question": "Test files",
+          "type": "choice",
+          "suggested": "<module>.test",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "name.bool",
+          "question": "Boolean variables prefix",
+          "type": "choice",
+          "suggested": "isX/hasX/shouldX",
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "4. Required patterns — mark Y for ones we always use",
+      "questions": [
+        {
+          "id": "req.dto",
+          "question": "Typed schemas / DTOs for API request and response models",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "req.di",
+          "question": "Dependency injection via constructors (no global singletons)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "req.http",
+          "question": "Typed HTTP clients (no raw requests / fetch in business code)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "req.exc",
+          "question": "Errors propagate via exceptions (no returning null on failure)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "req.pure",
+          "question": "Pure functions in core domain logic",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "req.immutable",
+          "question": "Immutable data structures by default",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "req.other",
+          "question": "Other required patterns (one per line)",
+          "type": "text",
+          "suggested": "Single Responsibility — each module / class has one reason to change\nOpen/Closed — open for extension, closed for modification\nLiskov Substitution — derived types must be substitutable for their base types\nInterface Segregation — many specific interfaces over one large interface\nDependency Inversion — depend on abstractions, never on concretions",
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "5. Forbidden patterns — blockers — mark Y for ones we forbid",
+      "questions": [
+        {
+          "id": "fb.sql",
+          "question": "SQL string concatenation (only parameterized queries)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.eval",
+          "question": "eval / exec / pickle on untrusted input",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.bare",
+          "question": "Bare except / catch-all without logging",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.secrets",
+          "question": "Hardcoded secrets / API keys / connection strings",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.mut",
+          "question": "Mutable default arguments",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.dborm",
+          "question": "Direct ORM / DB access outside the repository layer",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.print",
+          "question": "console.log / print left in committed code",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.wildcard",
+          "question": "Wildcard imports",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.disabled",
+          "question": "Disabled lint or type-check rules without justification",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.todo",
+          "question": "TODO / FIXME without a ticket reference",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "fb.other",
+          "question": "Other forbidden patterns (one per line)",
+          "type": "text",
+          "suggested": "Comments that describe *what* the code does (rewrite the code to be self-explanatory)\nDuplicated logic across files (DRY — extract a function or module)\nDead / commented-out code blocks",
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "6. Warnings — non-blocking — mark Y for ones we warn on",
+      "questions": [
+        {
+          "id": "warn.fnlen",
+          "question": "Functions longer than 50 lines",
+          "type": "yn",
+          "suggested": "Y",
+          "override": "Y",
+          "other": null
+        },
+        {
+          "id": "warn.cmplx",
+          "question": "Cyclomatic complexity > 10",
+          "type": "yn",
+          "suggested": "Y",
+          "override": "Y",
+          "other": null
+        },
+        {
+          "id": "warn.nest",
+          "question": "More than 3 levels of nesting",
+          "type": "yn",
+          "suggested": "Y",
+          "override": "Y",
+          "other": null
+        },
+        {
+          "id": "warn.filelen",
+          "question": "Files longer than 400 lines",
+          "type": "yn",
+          "suggested": null,
+          "override": "N",
+          "other": null
+        },
+        {
+          "id": "warn.magic",
+          "question": "Magic numbers (constants without named meaning)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": "Y",
+          "other": null
+        },
+        {
+          "id": "warn.other",
+          "question": "Other warning thresholds (one per line)",
+          "type": "text",
+          "suggested": "Functions doing more than one thing (single-responsibility at function level)\nFunctions with more than 3 arguments (use a parameter object)\nBoolean flag arguments (split into two named functions instead)\nVariable / parameter names of one or two letters (except loop counters)",
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "7. Testing",
+      "questions": [
+        {
+          "id": "test.fw",
+          "question": "Test framework",
+          "type": "choice",
+          "suggested": "Vitest",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "test.cov",
+          "question": "Coverage minimum for new code",
+          "type": "choice",
+          "suggested": "80%",
+          "override": "0.6",
+          "other": null
+        },
+        {
+          "id": "test.req.func",
+          "question": "Every new public function/method must have a unit test",
+          "type": "yn",
+          "suggested": null,
+          "override": "N",
+          "other": null
+        },
+        {
+          "id": "test.req.api",
+          "question": "Every new API endpoint must have a test",
+          "type": "yn",
+          "suggested": null,
+          "override": "N",
+          "other": null
+        },
+        {
+          "id": "test.req.bug",
+          "question": "Every bug fix must have a regression test",
+          "type": "yn",
+          "suggested": null,
+          "override": "N",
+          "other": null
+        },
+        {
+          "id": "test.req.e2e",
+          "question": "Critical user flows have end-to-end tests",
+          "type": "yn",
+          "suggested": null,
+          "override": "Y",
+          "other": null
+        },
+        {
+          "id": "test.mock",
+          "question": "HTTP mocking approach",
+          "type": "choice",
+          "suggested": "msw",
+          "override": "respx",
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "8. Security — mark Y for ones we enforce",
+      "questions": [
+        {
+          "id": "sec.input",
+          "question": "Input validation at all API boundaries",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.auth",
+          "question": "Auth middleware on every endpoint by default (deny-by-default)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.escape",
+          "question": "Output escaping for user-rendered content",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.csrf",
+          "question": "CSRF protection on state-changing endpoints",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.rate",
+          "question": "Rate limiting on public endpoints",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.authlib",
+          "question": "Use central auth library (no custom auth code)",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.crypto",
+          "question": "Use central crypto library (no custom crypto)",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.upload",
+          "question": "File uploads — scan + MIME validate + store outside webroot",
+          "type": "yn",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.secrets",
+          "question": "Secrets only via secret manager (no .env files in repos)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "sec.other",
+          "question": "Other security rules (one per line)",
+          "type": "text",
+          "suggested": null,
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "9. Tooling",
+      "questions": [
+        {
+          "id": "tool.fmt",
+          "question": "Formatter",
+          "type": "choice",
+          "suggested": "Prettier",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "tool.lint",
+          "question": "Linter",
+          "type": "choice",
+          "suggested": "ESLint",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "tool.types",
+          "question": "Type checker",
+          "type": "choice",
+          "suggested": "tsc strict",
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "10. What NOT to comment on — mark Y for ones to skip",
+      "questions": [
+        {
+          "id": "skip.fmt",
+          "question": "Formatting (handled by formatter)",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "skip.imp",
+          "question": "Import order",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "skip.ws",
+          "question": "Trailing whitespace / line endings",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "skip.lint",
+          "question": "Anything covered by an existing CI lint job",
+          "type": "yn",
+          "suggested": "Y",
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "skip.docs",
+          "question": "Docstring wording / grammar",
+          "type": "yn",
+          "suggested": null,
+          "override": "Y",
+          "other": null
+        },
+        {
+          "id": "skip.other",
+          "question": "Other things to skip (one per line)",
+          "type": "text",
+          "suggested": null,
+          "override": null,
+          "other": null
+        }
+      ]
+    },
+    {
+      "section": "11. Notes and references",
+      "questions": [
+        {
+          "id": "ref.style",
+          "question": "Internal style guide URL",
+          "type": "text",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "ref.arch",
+          "question": "Architecture docs URL",
+          "type": "text",
+          "suggested": null,
+          "override": null,
+          "other": null
+        },
+        {
+          "id": "ref.sec",
+          "question": "Security playbook URL",
+          "type": "text",
+          "suggested": null,
+          "override": null,
+          "other": null
+        }
+      ]
+    }
+  ]
+}
