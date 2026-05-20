@@ -22,8 +22,12 @@ No third-party dependencies — Python 3.9+ standard library only.
     │   └── SKILL.md              # generated from code-standards.json
     ├── commit-message/
     │   └── SKILL.md              # diffs, summarises, suggests, commits on approval
-    └── update-readme/
-        └── SKILL.md              # explores codebase and writes/updates README files
+    ├── update-readme/
+    │   └── SKILL.md              # explores codebase and writes/updates README files
+    ├── github-pr-review/
+    │   └── SKILL.md              # GitHub PR review via gh pending reviews + explicit approval
+    └── gitlab-mr-review/
+        └── SKILL.md              # GitLab MR review via draft notes + explicit approval
 ```
 
 ## Skills
@@ -32,6 +36,8 @@ No third-party dependencies — Python 3.9+ standard library only.
 |---|---|
 | `/code-reviewer-generator` | Apply presets and regenerate the `/code-review` skill |
 | `/code-review` | Review a diff or PR against team standards |
+| `/github-pr-review` | Review a GitHub PR with `gh`: pending reviews, suggestions, COMMENT/APPROVE/REQUEST_CHANGES — approval before post |
+| `/gitlab-mr-review` | Review a GitLab merge request: draft notes, batch publish, explicit approval before posting |
 | `/commit-message` | Summarise staged changes, suggest a commit message, update READMEs, then commit on approval |
 | `/update-readme` | Explore the codebase and create or update README.md files |
 
